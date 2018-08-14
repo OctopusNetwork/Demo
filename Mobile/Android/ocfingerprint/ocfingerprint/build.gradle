@@ -1,0 +1,91 @@
+apply plugin: 'com.android.library'
+apply plugin: 'me.tatarka.retrolambda'
+
+def SNAPSHOT = true
+def VERSION_NAME = "1.0.0"
+def VERSION_CODE = 1001000
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+    publishNonDefault true
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 25
+        versionCode VERSION_CODE
+        versionName VERSION_NAME
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+
+    packagingOptions {
+        exclude '.readme'
+        exclude 'LICENSE.txt'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/README.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+        exclude '**/pom.properties'
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+configurations.all {
+    // Changing版本(version以SNAPSHOT结尾的默认为Changing版本),每次都从服务器更新
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile "com.android.support:appcompat-v7:25.3.1"
+
+    compile 'com.google.android.gms:play-services-analytics:10.2.0'
+    compile 'com.google.android.gms:play-services-basement:10.2.0'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.8.9'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.8.9'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.8.9'
+    compile 'com.squareup.okhttp3:okhttp:3.8.1'
+    compile 'com.squareup.okhttp3:okhttp-urlconnection:3.8.1'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-jackson:2.3.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    compile 'io.reactivex.rxjava2:rxjava:2.1.1'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+}
