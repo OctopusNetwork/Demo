@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        >
+
+        <Button
+            android:id="@+id/bluetooth_mac_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="请求蓝牙mac地址"
+            android:visibility="gone"
+            />
+        <Button
+            android:id="@+id/android_id_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="请求android id"
+            />
+        <Button
+            android:id="@+id/operator_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="运营商"
+            />
+        <Button
+            android:id="@+id/device_id_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="请求IMEI"
+            />
+        <Button
+            android:id="@+id/wifi_mac_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="请求Wifi mac地址"
+            />
+        <Button
+            android:id="@+id/ssid_bssid_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="请求路由器SSID + BSSID"
+            />
+        <Button
+            android:id="@+id/is_root_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="检查是否root"
+            />
+        <Button
+            android:id="@+id/user_agent_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="获取user agent"
+            />
+        <Button
+            android:id="@+id/network_type_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="获取网络类型"
+            />
+        <Button
+            android:id="@+id/os_version_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="获取系统版本"
+            />
+        <Button
+            android:id="@+id/ad_id_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="获取advertising id"
+            />
+        <Button
+            android:id="@+id/cpu_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="获取处理器"
+            />
+        <Button
+            android:id="@+id/rom_size_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="获取ROM大小"
+            />
+        <Button
+            android:id="@+id/flash_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="ndk获取flash"
+            />
+
+    </LinearLayout>
+</ScrollView>
