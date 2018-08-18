@@ -1,0 +1,53 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 25
+
+
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    signingConfigs {
+        release {
+
+//            Properties properties = new Properties()
+//            properties.load(project.rootProject.file('local.properties').newDataInputStream())
+//
+//            storeFile file(properties.getProperty('key.store'))
+//            storePassword properties.getProperty('key.store.password')
+//            keyAlias properties.getProperty('key.alias')
+//            keyPassword properties.getProperty('key.alias.password')
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:appcompat-v7:25.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    implementation 'com.android.support:recyclerview-v7:25.1.0'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.8.1'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.8.1'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.8.1'
+//    compile 'org.web3j:core:3.2.0'
+}
